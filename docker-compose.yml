@@ -13,7 +13,22 @@ services:
       - ./init-db:/docker-entrypoint-initdb.d
     networks:
       - connect_network
-
+      
+  mongo:
+    container_name: connect-mongo
+    image: mongo:4.2-bionic
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data:/data/db
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - connect_network
+    
 networks:
   connect_network:
     name: connect-network
