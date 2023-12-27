@@ -34,6 +34,7 @@ services:
     image: neo4j:5.13-community
     restart: always
     environment:
+      - NEO4J_dbms_security_auth__minimum__password__length=3
       - NEO4J_AUTH=neo4j/123
     ports:
       - '7474:7474'
