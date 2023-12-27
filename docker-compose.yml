@@ -28,6 +28,24 @@ services:
       - ./init-db:/docker-entrypoint-initdb.d
     networks:
       - connect_network
+
+  neo4j:
+    container_name: connect-neo4j
+    image: neo4j:5.13-community
+    restart: always
+    environment:
+      - NEO4J_dbms_security_auth__minimum__password__length=3
+      - NEO4J_AUTH=neo4j/123
+    ports:
+      - '7474:7474'
+      - '7687:7687'
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+      - ./import:/var/lib/neo4j/import
+      - ./plugins:/plugins
+    networks:
+      - connect_network
     
 networks:
   connect_network:
