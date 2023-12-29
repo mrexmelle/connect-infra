@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS credentials(
 	CONSTRAINT pk_credentials PRIMARY KEY(employee_id)
 );
 GRANT SELECT ON credentials TO authx_r;
-GRANT UPDATE, INSERT, DELETE ON credentials TO authx_w;
+GRANT SELECT, UPDATE, INSERT, DELETE ON credentials TO authx_w;
 
 CREATE TABLE IF NOT EXISTS profiles(
 	ehid TEXT NOT NULL,
@@ -30,4 +30,4 @@ CREATE TABLE IF NOT EXISTS profiles(
 	CONSTRAINT pk_profiles PRIMARY KEY(ehid)
 );
 GRANT SELECT ON profiles TO authx_r;
-GRANT UPDATE, INSERT, DELETE ON profiles TO authx_w;
+GRANT SELECT, UPDATE, INSERT, DELETE ON profiles TO authx_w;

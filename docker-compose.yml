@@ -50,3 +50,4 @@ services:
 networks:
   connect_network:
     name: connect-network
+    driver: bridge
