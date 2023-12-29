@@ -24,8 +24,8 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - ./data:/data/db
-      - ./init-db:/docker-entrypoint-initdb.d
+      - ./mongo/data/db:/data/db
+      - ./mongo/init-db:/docker-entrypoint-initdb.d
     networks:
       - connect_network
 
