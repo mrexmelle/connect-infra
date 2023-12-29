@@ -40,10 +40,10 @@ services:
       - '7474:7474'
       - '7687:7687'
     volumes:
-      - ./data:/data
-      - ./logs:/logs
-      - ./import:/var/lib/neo4j/import
-      - ./plugins:/plugins
+      - ./neo4j/data:/data
+      - ./neo4j/logs:/logs
+      - ./neo4j/import:/var/lib/neo4j/import
+      - ./neo4j/plugins:/plugins
     networks:
       - connect_network
     
