@@ -5,18 +5,7 @@ db.createCollection('proposals')
 db.createCollection('events')
 
 db.createUser({
-    user: 'apms_r',
-    pwd: '123',
-    roles: [
-        {
-            role: 'read',
-            db: 'apms',
-        },
-    ],
-})
-
-db.createUser({
-    user: 'apms_w',
+    user: 'apms',
     pwd: '123',
     roles: [
         {
